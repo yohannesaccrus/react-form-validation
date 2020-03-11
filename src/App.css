@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+form {
+  border-radius: 1.000em;
+  padding: 2.000em;
+  width: 20.000em;
+  box-shadow: 0px 20px 30px 0 rgba(255, 107, 129,.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+form.valid {
+  box-shadow: 0px 20px 30px 0 rgba(123, 237, 159,.2);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+form h2 {
+  margin-bottom: .800em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.group {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-wrap: wrap;
+}
+.group label, input {
+  flex-basis: 100%;
+}
+.group label {
+  margin-bottom: .500em;
+}
+.group input {
+  padding: .500em;
+  outline: 0;
+  border-radius: .312em;
+}
+.group:not(:last-child) {
+  margin-bottom: 1.800em;
+}
+.group button {
+  width: 100%;
+  padding: .800em;
+  border: none;
+  outline: none;
+  background-color: #ff6b81;
+  border-radius: .312em;
   color: white;
+  font-weight: 600;
+  font-size: .900em;
+  transition: all .3s ease;
+}
+.group button:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+}
+.group button:active {
+  transform: scale(.98);
+}
+.group button.valid {
+  background-color: #2ed573;
 }
 
-.App-link {
-  color: #61dafb;
+.notif {
+  margin-top: .500em;
+  background-color: orange;
+  padding: .500em .800em;
+  border-radius: .312em;
+  font-size: .700em;
+  color: #fff;
+  transition: all .5s ease;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.notif.valid {
+  background-color: green;
+}
+.notif .show {
+  transform: scale(1);
+}
+.notif .hide {
+  transform: scale(0);
+  display: none;
 }
